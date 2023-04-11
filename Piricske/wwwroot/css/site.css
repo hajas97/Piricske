@@ -15,4 +15,18 @@ html {
 
 body {
   margin-bottom: 60px;
+
 }
+
+.background-image {
+    background-image: src(../images/main/mainBg.jpg);
+    width:100vh;
+    height:100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*mainBody{
+    background-image: src(../images/main/mainBg.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+}*/
