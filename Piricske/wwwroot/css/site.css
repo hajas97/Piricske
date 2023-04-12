@@ -16,15 +16,33 @@ html {
 body {
   margin-bottom: 60px;
 
+
 }
 
+.mainLogo {
+    width: 6vh;
+    height: 6vh;
+}
 .background-image {
+    margin:0;
     background-image: url('../images/main/mainBg.jpg');
-    width: 150vh;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment:fixed;
+    background-size:cover;
+    background-attachment: fixed;
+    z-index:inherit;
+}
+#middleText {
+    padding: 200px;
+    text-align: center;
+
+}
+
+#mainText{
+    color:white;
+    font-weight:500;
+
 }
 
 /*mainBody{
