@@ -15,8 +15,6 @@ html {
 
 body {
   margin-bottom: 60px;
-
-
 }
 
 .mainLogo {
@@ -31,7 +29,6 @@ body {
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
-    z-index:inherit;
 }
 #middleText {
     padding: 200px;
@@ -43,6 +40,16 @@ body {
     color:white;
     font-weight:500;
 
+}
+
+.marika{
+    z-index:1;
+    
+}
+
+.colorBg{
+    
+    background-color:aquamarine;
 }
 
 /*mainBody{
