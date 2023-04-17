@@ -1,7 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Piricske 175";
 }
-<div class="background-image">
+
+@*ide kéne a partialokat behozni*@
+@*<div class="background-image">
     <div class="text-center">
         <div id="middleText">
             <h1 id="mainText" class="display-1">Piricske <br />175</h1>
@@ -19,6 +21,13 @@
             <buton class="bg-light">foglalás</buton>
         </div>
     </div>
+</div>*@
+<div style="height:100vh; padding:150px">
+    <a href="#privacy">  linkecske hogy lássuk is  </a>
+</div>
+
+<div id="privacy">
+    <partial name="Privacy.cshtml" />
 </div>
 
 
