@@ -169,8 +169,6 @@ textarea{
     padding-block: 25px;
 }
 
-
-
 /**
    * HERO
    */
@@ -203,3 +201,55 @@ textarea{
 #mainText p {
     font-size: 36px;
 }
+
+.about { 
+    padding-block: var(--section-padding); 
+    background-color:rgb(239, 239, 239)
+}
+
+.about-content { margin-bottom: 30px; }
+
+.about-title { margin-bottom: 10px; }
+
+.about-text {
+  color: var(--cool-gray);
+  font-weight: var(--fw-500);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+
+.about-card {
+  padding: 20px;
+  background-color:white;
+  text-align: center;
+  box-shadow: 0 3px 12px hsla(233, 77%, 10%, 0.06);
+  border-radius: 4px;
+  transition: var(--transition);
+  width:350px;
+  height:275px
+}
+
+.about-card:hover {
+  background: var(--majorelle-blue);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 18px hsla(245, 67%, 59%, 0.4);
+}
+
+
+.about-card .card-title {
+  margin-bottom: 10px;
+  transition: var(--transition);
+}
+
+.about-card:hover .card-title { color: var(--white); }
+
+.about-card .card-text {
+  color: var(--cool-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  line-height: 1.8;
+  transition: var(--transition);
+}
+
+.about-card:hover .card-text { color: hsla(0, 0%, 100%, 0.5); }
