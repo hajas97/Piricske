@@ -22,7 +22,7 @@ body {
 .background-image {
     margin:0;
     padding:0;
-    background-image: url('../images/main/mainBg.jpg');
+    background-image: url('../images/main/bg-2.jpg');
     width: 100%;
     height: 100vh;
     background-repeat: no-repeat;
@@ -219,15 +219,39 @@ textarea{
 }
 
 
+.about {
+    overflow-x: hidden;
+}
+
+.about-content {
+    text-align: center;
+}
+
 .about-card {
-  padding: 20px;
-  background-color:white;
-  text-align: center;
-  box-shadow: 0 3px 12px hsla(233, 77%, 10%, 0.06);
-  border-radius: 4px;
-  transition: var(--transition);
-  width:350px;
-  height:275px
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 3px 12px hsla(233, 77%, 10%, 0.06);
+    border-radius: 4px;
+    transition: var(--transition);
+    width: 100%;
+    max-width: 350px;
+    height: 275px;
+}
+
+.d-flex {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gap-2 > * {
+    margin: 0 2rem 2rem 0;
+}
+
+@media (max-width: 767px) {
+    .gap-2 > * {
+        margin: 0 0 2rem 0;
+    }
 }
 
 .about-card:hover {
