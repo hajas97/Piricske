@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Piricske.Models;
 using System.Diagnostics;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace Piricske.Controllers
 {
@@ -20,7 +19,6 @@ namespace Piricske.Controllers
             return View();
         }
 
-        //Gallery
         
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

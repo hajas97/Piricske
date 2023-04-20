@@ -286,3 +286,8 @@ footer {
     padding-top: 40px;
     background-color: #4b6799;
 }
+
+.card-img-top {
+    object-fit: cover;
+    height: 300px; /* válassz egy megfelelõ magasságot */
+}

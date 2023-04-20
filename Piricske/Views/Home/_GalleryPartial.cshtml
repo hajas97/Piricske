@@ -5,60 +5,42 @@
     ViewData["Title"] = "Galéria";
 }
 
-<!-- Galéria tartalom -->
 <div class="container my-5">
-    <div class="container">
-        <div class="about-content">
-            <h2 class="h1">Galéria</h2>
-        </div>
-    <div class="row">
-        <div class="col-md-8 offset-md-2">
-            <div id="gallery" class="carousel slide" data-bs-ride="carousel">
-                <!-- Képek -->
-                <div class="carousel-inner">
-                    <!-- Kártya 1 -->
-                    <div class="carousel-item active">
-                        <div class="card">
-                            <img src="img/image1.jpg" alt="Kép 1" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Kép 1</h5>
-                                <p class="card-text">Leírás 1</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Kártya 2 -->
-                    <div class="carousel-item">
-                        <div class="card">
-                            <img src="img/image2.jpg" alt="Kép 2" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Kép 2</h5>
-                                <p class="card-text">Leírás 2</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Kártya 3 -->
-                    <div class="carousel-item">
-                        <div class="card">
-                            <img src="img/image3.jpg" alt="Kép 3" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Kép 3</h5>
-                                <p class="card-text">Leírás 3</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- További képek -->
-                    <!-- Itt adhatsz hozzá további carousel-item osztályú div-eket újabb képekkel és kártyákkal -->
-                </div>
-                <!-- Lapozó gombok -->
-                <a class="carousel-control-prev" href="#gallery" role="button" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Előző</span>
-                </a>
-                <a class="carousel-control-next" href="#gallery" role="button" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Következő</span>
-                </a>
-            </div>
-        </div>
+  <div class="container">
+    <div class="about-content">
+      <h2 class="h1">Galéria</h2>
     </div>
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div id="gallery" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="card">
+                <img src="images/Gallery/piricske-6.jpg" alt="Kép 1" class="card-img-top gallery-img">
+                <div class="card-body"></div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <img src="images/Gallery/piricske-4.jpg" alt="Kép 2" class="card-img-top gallery-img">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <img src="images/Gallery/piricske-3.jpg" alt="Kép 3" class="card-img-top gallery-img">
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#gallery" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Előző</span>
+          </a>
+          <a class="carousel-control-next" href="#gallery" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Következő</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
