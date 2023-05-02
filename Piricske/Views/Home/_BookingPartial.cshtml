@@ -1,0 +1,48 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Foglalás";
+}
+
+
+<section class="about">
+
+    <div class="about-content">
+        <h2 class="h1">Időpontfoglalás</h2>
+    </div>
+
+<div id="calendar"></div>
+
+@section scripts {
+    <!-- Inklúzív jQuery és FullCalendar fájlok -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                defaultView: 'month',
+                selectable: true,
+                selectHelper: true,
+                events: '@Url.Action("GetAppointments", "Appointment")', // URL az időpontok lekérdezéséhez a szerverről
+                select: function (start, end) {
+                    // Kezelje az időpont kijelölést és küldje a szervernek az új időpontot a foglalás rögzítéséhez
+                    // start és end paraméterek a kiválasztott időintervallum kezdő és végidőpontját tartalmazzák
+                },
+                eventClick: function (event) {
+                    // Kezelje az esemény kattintását (pl. törlés vagy szerkesztés)
+                    // event paraméter az aktuális esemény objektumot tartalmazza
+                }
+            });
+        });
+    </script>
+}
+</section>
