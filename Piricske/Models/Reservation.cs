@@ -1,5 +1,7 @@
-﻿namespace Piricske.Models 
-{ 
+﻿using System;
+
+namespace Piricske.Models
+{
     public class Reservation
     {
         public int Id { get; set; }
@@ -13,8 +15,8 @@
                 return (DepartureDate - ArrivalDate).Days;
             }
         }
+        public bool IsReserved { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
     }
-
 }

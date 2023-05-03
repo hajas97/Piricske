@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Piricske.Data;
+
 namespace Piricske
 {
     public class Program
@@ -8,6 +12,9 @@ namespace Piricske
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<ReservationContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("BookingContext")));
 
             var app = builder.Build();
 
