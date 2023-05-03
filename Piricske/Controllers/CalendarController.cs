@@ -16,7 +16,7 @@ public class BookingController : Controller
     }
 
     [HttpPost]
-    public ActionResult Create(Booking booking)
+    public ActionResult Create(Reservation booking)
     {
         if (ModelState.IsValid)
         {
