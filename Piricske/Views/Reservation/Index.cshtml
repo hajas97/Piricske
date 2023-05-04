@@ -4,29 +4,29 @@
 
 @model IEnumerable<Piricske.Models.Reservation>
 
-<h2>Reservations</h2>
+<h2>Időpontok</h2>
 
 <p>
-    <a asp-action="Create" class="btn btn-success">Create New</a>
+    <a asp-action="Create" class="btn btn-success">Új foglalás</a>
 </p>
 
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CustomerName)
+                Ügyfél neve
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ArrivalDate)
+                Érkezés időpontja
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DepartureDate)
+                Távozás időpontja
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Duration)
+                Éjszakák száma
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsReserved)
+                Sikeres foglalás 
             </th>
             <th></th>
         </tr>
@@ -51,9 +51,9 @@
                     @Html.DisplayFor(modelItem => item.IsReserved)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Módosítás</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Részletek</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Törlés</a>
                 </td>
             </tr>
         }
