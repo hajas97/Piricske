@@ -1,4 +1,4 @@
-# Piricske - Transilvania Apartment Page
+# Piricske 
 
 This is an ASP.NET Core web application that showcases an apartment located in Piricske, Transilvania. This project utilizes ASP.NET Core, Entity Framework, JavaScript, HTML, and CSS to create an interactive and visually appealing web page.
 
