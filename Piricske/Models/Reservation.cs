@@ -18,5 +18,20 @@ namespace Piricske.Models
         public bool IsReserved { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
+        public string FormattedArrivalDate
+        {
+            get
+            {
+                return ArrivalDate.ToString("yyyy-MM-dd");
+            }
+        }
+
+        public string FormattedDepartureDate
+        {
+            get
+            {
+                return DepartureDate.ToString("yyyy-MM-dd");
+            }
+        }
     }
 }

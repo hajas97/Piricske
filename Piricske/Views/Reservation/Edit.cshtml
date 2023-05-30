@@ -3,11 +3,17 @@
 *@
 @model Piricske.Models.Reservation
 
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+
 <h2>Edit Reservation</h2>
 
 <form asp-action="Edit">
     <div class="form-group">
-        <label asp-for="CustomerName" class="control-label"></label>
+        <label asp-for="CustomerName" class="control-label">Vendég neve</label>
         <input asp-for="CustomerName" class="form-control" />
         <span asp-validation-for="CustomerName" class="text-danger"></span>
     </div>
@@ -37,7 +43,8 @@
 </form>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Vissza az időpontokhoz</a>
+</div>
 </div>
 
 @section Scripts {
