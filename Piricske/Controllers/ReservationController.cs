@@ -38,6 +38,27 @@ namespace Piricske.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Ellenőrizzük, hogy az érkezési időpont nem múltbeli időpont-e
+                if (reservation.ArrivalDate < DateTime.Now)
+                {
+                    ModelState.AddModelError("ArrivalDate", "Az érkezési időpont nem lehet múltbeli időpont!");
+                    return View(reservation);
+                }
+
+                // Ellenőrizzük, hogy a foglalás az aktuális időponttól számított maximum 2 éven belül van-e
+                DateTime twoYearsFromNow = DateTime.Now.AddYears(2);
+                if (reservation.ArrivalDate > twoYearsFromNow)
+                {
+                    ModelState.AddModelError("ArrivalDate", "A foglalás csak az aktuális dátumtól számított maximum 2 éven belül lehetséges!");
+                    return View(reservation);
+                }
+
+                if (reservation.DepartureDate < DateTime.Now)
+                {
+                    ModelState.AddModelError("DepartureDate", "A távozás időpontja nem lehet múltbéli időpont!");
+                    return View(reservation);
+                }
+
                 reservation.IsReserved = true;
                 _context.Add(reservation);
                 await _context.SaveChangesAsync();
@@ -45,6 +66,7 @@ namespace Piricske.Controllers
             }
             return View(reservation);
         }
+
 
         // GET: Reservation/Edit/5
         public async Task<IActionResult> Edit(int? id)

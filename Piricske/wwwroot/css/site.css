@@ -285,9 +285,11 @@ footer {
     margin-top: 20px;
     padding-top: 40px;
     background-color: #4b6799;
+    color:aliceblue;
 }
 
 .card-img-top {
     object-fit: cover;
     height: 300px; /* válassz egy megfelelõ magasságot */
 }
+
