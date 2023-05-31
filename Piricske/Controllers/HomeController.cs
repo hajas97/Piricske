@@ -19,7 +19,17 @@ namespace Piricske.Controllers
             return View();
         }
 
-        
+        public IActionResult Reservation()
+        {
+            return RedirectToAction("Index", "Reservation");
+        }
+
+        public IActionResult Gallery()
+        {
+            return RedirectToAction("Index", "Gallery");
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
