@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Piricske.Data;
@@ -19,6 +20,7 @@ namespace Piricske.Controllers
         }
 
         // GET: Reservation
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var reservations = await _context.Reservations.ToListAsync();
@@ -26,12 +28,14 @@ namespace Piricske.Controllers
         }
 
         // GET: Reservation/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
         }
 
         // POST: Reservation/Create
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,CustomerName,ArrivalDate,DepartureDate,Email,Phone")] Reservation reservation)
@@ -69,6 +73,7 @@ namespace Piricske.Controllers
 
 
         // GET: Reservation/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -85,6 +90,7 @@ namespace Piricske.Controllers
         }
 
         // POST: Reservation/Edit/5
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,CustomerName,ArrivalDate,DepartureDate,Email,Phone,IsReserved")] Reservation reservation)
@@ -134,6 +140,7 @@ namespace Piricske.Controllers
 
 
         // GET: Reservation/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -152,6 +159,7 @@ namespace Piricske.Controllers
         }
 
         // POST: Reservation/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

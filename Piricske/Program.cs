@@ -1,6 +1,7 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Piricske.Data;
+// Egyéb szükséges usings
 
 namespace Piricske
 {
@@ -16,6 +17,12 @@ namespace Piricske
             builder.Services.AddDbContext<ReservationContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("BookingContext")));
 
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    // Autentikációs beállítások
+                });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -28,6 +35,8 @@ namespace Piricske
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseAuthentication(); // Autentikáció middleware beállítása
 
             app.UseRouting();
 
