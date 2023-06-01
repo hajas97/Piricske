@@ -1,5 +1,29 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model LoginViewModel
+
+<h2>Bejelentkezés</h2>
+
+@using (Html.BeginForm("Login", "Account", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password)
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Password)
+    </div>
+
+    <div class="form-group">
+        <div class="form-check">
+            @Html.CheckBoxFor(m => m.RememberMe, new { @class = "form-check-input" })
+            @Html.LabelFor(m => m.RememberMe, new { @class = "form-check-label" })
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Bejelentkezés</button>
 }
