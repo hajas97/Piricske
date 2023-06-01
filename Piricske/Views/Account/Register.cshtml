@@ -1,28 +1,41 @@
 ﻿@model RegisterViewModel
 
-<h2>Regisztráció</h2>
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
+<div class="container-fluid">
+    <h2>Regisztráció</h2>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email)
-        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Email)
-    </div>
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        @Html.AntiForgeryToken()
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password)
-        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Password)
-    </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "col-sm-2 control-label" })
+            <div class="col-sm-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-sm", placeholder = "Email"  })
+                @Html.ValidationMessageFor(m => m.Email)
+            </div>
+        </div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword)
-        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.ConfirmPassword)
-    </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, new { @class = "col-sm-2 control-label" })
+            <div class="col-sm-10">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control input-sm", placeholder = "Jelszó"  })
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+        </div>
 
-    <button type="submit" class="btn btn-primary">Regisztráció</button>
-}
+        <div class="form-group">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-sm-2 control-label" })
+            <div class="col-sm-10">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control input-sm" })
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary btn-sm">Regisztrálás</button>
+            </div>
+        </div>
+    }
+</div>
