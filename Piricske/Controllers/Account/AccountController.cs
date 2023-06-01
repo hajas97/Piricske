@@ -80,5 +80,31 @@ namespace Piricske.Controllers.Account
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+
+        // Admin felhasználó létrehozása
+        public async Task<IActionResult> CreateAdminUser()
+        {
+            var adminUser = await _userManager.FindByEmailAsync("admin@example.com");
+
+            if (adminUser == null)
+            {
+                adminUser = new IdentityUser
+                {
+                    UserName = "admin@example.com",
+                    Email = "admin@example.com"
+                };
+
+                var result = await _userManager.CreateAsync(adminUser, "AdminPassword");
+
+                if (result.Succeeded)
+                {
+                    await _userManager.AddToRoleAsync(adminUser, "Admin");
+                    await _signInManager.SignInAsync(adminUser, isPersistent: false);
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

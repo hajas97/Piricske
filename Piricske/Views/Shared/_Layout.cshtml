@@ -43,9 +43,7 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                <form method="post" asp-controller="Account" asp-action="Logout" class="form-inline">
-                                    <button type="submit" class="nav-link btn btn-link">Kijelentkezés</button>
-                                </form>
+                                <partial name="_LoggedIn" />
                             </li>
                         }
                         else
